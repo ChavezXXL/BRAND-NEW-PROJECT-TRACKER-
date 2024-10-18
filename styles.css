@@ -879,13 +879,27 @@ nav#side-menu.active + .main-content {
     margin-bottom: 5px;
   }
 }
-.work-log-table td {
-    padding: 10px;
-    vertical-align: middle;
+@media screen and (max-width: 768px) {
+  /* Styles for tablets and mobile devices */
+  .project-card {
+    width: 100%;
+    margin-bottom: 20px;
   }
-  
-  .work-log-table .btn-secondary,
-  .work-log-table .btn-danger {
-    margin-right: 5px;
-    padding: 5px 10px;
+
+  .side-menu {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: left 0.3s ease-in-out;
   }
+
+  .side-menu.active {
+    left: 0;
+  }
+
+  /* Add more responsive styles as needed */
+}
+#manual-time {
+  margin-bottom: 15px;
+}
