@@ -60,6 +60,7 @@
     <li><button id="show-work-log-btn"><i class="fas fa-clock"></i> Work Logs</button></li>
     <li><button id="show-settings-btn"><i class="fas fa-cog"></i> Settings</button></li>
     <li><button id="show-admin-view-btn"><i class="fas fa-user-shield"></i> Admin View</button></li>
+    <li><button id="show-deleted-projects-btn"><i class="fas fa-trash-alt"></i> Trash</button></li>
   </ul>
   <div id="menu-bottom">
     <button id="export-data-btn" class="btn-danger"><i class="fas fa-download"></i> Export Data</button>
@@ -79,6 +80,8 @@
         </div>
       </div>
       <div id="projects" class="project-container"></div>
+      <div id="project-search-container" class="search-container"></div>
+  <div id="projects" class="project-container"></div>
     </section>
 
     <!-- Completed Projects Section -->
@@ -90,7 +93,25 @@
       </div>
     </div>
     <div id="completed-projects-container" class="project-container"></div>
+    <div id="completed-search-container" class="search-container"></div>
+    <div id="completed-projects-container" class="project-container"></div>
   </section>
+
+   <!-- Deleted Projects Section -->
+  <section id="deleted-projects" class="content">
+    <div class="header-row">
+        <h2>Trash</h2>
+        <div class="actions-container">
+            <input type="text" id="deleted-project-search-input" placeholder="Search Deleted Projects">
+            <button id="empty-trash-btn" class="btn-danger">
+                <i class="fas fa-trash"></i> Empty Trash
+            </button>
+        </div>
+    </div>
+    <div id="deleted-projects-container" class="project-container">
+        <!-- Projects will be dynamically inserted here -->
+    </div>
+</section>
 
  <!-- Admin View Section -->
  <section id="admin-view" class="content">
@@ -100,6 +121,8 @@
      <input type="text" id="admin-project-search-input" placeholder="Search Projects">
    </div>
  </div>
+ <div id="admin-projects" class="project-container"></div>
+ <div id="admin-search-container" class="search-container"></div>
  <div id="admin-projects" class="project-container"></div>
 </section>
 
@@ -176,6 +199,12 @@
         </select>
         <label for="default-employees">Default Assigned Employees:</label>
         <select id="default-employees" multiple></select>
+        <div class="break-settings-section">
+          <h3>Automatic Breaks</h3>
+          <div class="info-text">Configure automatic breaks when all operations will pause</div>
+          <div id="breaks-list"></div>
+          <button id="add-break" class="btn-primary">Add New Break</button>
+        </div>        
       </div>
     </div>
   </section>
@@ -212,9 +241,7 @@
         <label for="project-client">Client:</label>
         <select id="project-client"></select>
         <label for="estimated-time">Estimated Time (hours):</label>
-        <input type="number" id="estimated-time" name="estimated-time" min="0" step="0.5">
-        <label for="manual-time">Manual Time Input (hours):</label>
-        <input type="number" id="manual-time" name="manual-time" min="0" step="0.01">
+<input type="number" id="estimated-time" name="estimated-time" min="0" step="0.5">
         <button type="button" id="save-project-btn" class="btn-primary">Save Project</button>
       </form>
     </div>
@@ -256,14 +283,19 @@
       <form id="client-form">
         <label for="client-name">Client Name:</label>
         <input type="text" id="client-name" required>
+        
         <label for="client-contact">Contact Person:</label>
         <input type="text" id="client-contact">
+        
         <label for="client-phone">Phone Number:</label>
         <input type="text" id="client-phone">
+        
         <label for="client-email">Email:</label>
         <input type="email" id="client-email">
+        
         <label for="client-address">Address:</label>
         <textarea id="client-address"></textarea>
+        
         <button type="button" id="save-client-btn" class="btn-primary">Save Client</button>
       </form>
     </div>
@@ -284,15 +316,10 @@
   </div>
 </div>
 
-  <!-- Edit Work Log Modal -->
-  <div id="edit-log-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="edit-log-content"></div>
-    </div>
-  </div>
-
   <!-- Scripts -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>
   <script type="module" src="main.js"></script>
 </body>
 </html>
