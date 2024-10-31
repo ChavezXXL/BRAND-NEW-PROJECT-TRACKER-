@@ -255,12 +255,14 @@ nav#side-menu.active + .main-content {
 
 .project-card {
   background-color: #fff;
-  border-radius: var(--border-radius);
-  padding: 20px;
+  border-radius: 16px;
+  padding: 30px;
   width: calc(33.333% - 20px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   font-size: 1.05em;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .list-view .project-card {
@@ -268,17 +270,24 @@ nav#side-menu.active + .main-content {
 }
 
 .project-card h3 {
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.project-details {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-details p {
   margin-bottom: 12px;
-}
-
-.project-card .project-details {
-  font-size: 1.2em;
-}
-
-.project-card .project-details p {
-  margin-bottom: 6px;
+  font-size: 1.1em;
+  color: #2c3e50;
 }
 
 .project-card .employee-timers {
@@ -423,16 +432,18 @@ nav#side-menu.active + .main-content {
 
 /* Work Log */
 .work-log-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .work-log-entry {
   background-color: #fff;
-  border-radius: var(--border-radius);
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
 .work-log-entry h4 {
@@ -458,25 +469,87 @@ nav#side-menu.active + .main-content {
   background-color: #d14243;
 }
 
+/* Work Log Table Enhancement */
 .work-log-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.work-log-table th, .work-log-table td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
+  margin-top: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
 }
 
 .work-log-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
+  background-color: #f5f5f5;
+  padding: 15px 20px;
+  font-weight: 600;
+  text-align: left;
+  color: #2c3e50;
+}
+
+.work-log-table td {
+  padding: 15px 20px;
+  border-top: 1px solid #e0e0e0;
 }
 
 .work-log-table tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+.work-log-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.work-log-actions button {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.view-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #1e2c3a;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #43a047;
+}
+
+.pause-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.pause-btn:hover {
+  background-color: #f57c00;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
 }
 
 /* Settings Page */
@@ -567,17 +640,19 @@ nav#side-menu.active + .main-content {
 
 .modal-content {
   background-color: #fff;
-  margin: 5% auto;
-  padding: 20px;
-  border-radius: var(--border-radius);
+  margin: 3% auto;
+  padding: 40px;
+  border-radius: 20px;
   width: 90%;
-  max-width: 600px;
+  max-width: 800px;
   position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 .modal-content h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 30px;
   color: var(--primary-color);
+  font-weight: 600;
 }
 
 .modal-content label {
@@ -590,11 +665,22 @@ nav#side-menu.active + .main-content {
 .modal-content textarea,
 .modal-content select {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: var(--border-radius);
-  margin-bottom: 15px;
-  font-size: 0.9em;
+  padding: 15px;
+  font-size: 1.2em;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content select:focus {
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 .modal-content button {
@@ -606,6 +692,7 @@ nav#side-menu.active + .main-content {
   border: none;
   border-radius: var(--border-radius);
 }
+
 
 .modal-content button:hover {
   background-color: #d96b34;
@@ -629,6 +716,12 @@ nav#side-menu.active + .main-content {
   .project-card {
     width: calc(50% - 20px);
   }
+  
+  .pause-resume-btn,
+  .stop-employee-btn {
+    padding: 20px 30px;
+    font-size: 1.3em;
+  }
 
   nav#side-menu.active + .main-content {
     margin-left: 0;
@@ -642,6 +735,21 @@ nav#side-menu.active + .main-content {
 @media (max-width: 768px) {
   .project-card {
     width: 100%;
+  }
+  
+  .modal-content {
+    padding: 30px;
+    margin: 5% auto;
+  }
+  
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .pause-resume-btn,
+  .stop-employee-btn {
+    padding: 22px 30px;
+    font-size: 1.4em;
   }
 
   .action-buttons button {
@@ -691,9 +799,14 @@ nav#side-menu.active + .main-content {
     padding: 15px 30px;
   }
   
-  .employee-timer {
-    font-size: 1.5rem;
-  }
+ /* Improved Employee Timer Section */
+.employee-timer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
   
   .project-card .action-buttons button {
     font-size: 1.1em;
@@ -732,16 +845,6 @@ nav#side-menu.active + .main-content {
 
 .admin-project-card .admin-actions .delete-btn:hover {
   background-color: #d14243;
-}
-.notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 15px;
-  border-radius: 5px;
-  z-index: 1000;
 }
 
 .project-log-section {
@@ -820,15 +923,26 @@ nav#side-menu.active + .main-content {
 }
 
 .timer-display {
-  flex: 1;
-  margin-right: 10px;
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 15px;
 }
 
 .pause-resume-btn,
 .stop-employee-btn {
-  padding: 25px 100px;
-  font-size: 14px;
-  margin-right: 5px;
+  padding: 18px 30px;
+  font-size: 1.2em;
+  border-radius: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pause-resume-btn {
@@ -836,8 +950,13 @@ nav#side-menu.active + .main-content {
   color: white;
 }
 
+.pause-resume-btn:hover {
+  background-color: #43a047;
+  transform: translateY(-1px);
+}
+
 .pause-resume-btn.paused {
-  background-color: #FFA500;
+  background-color: #ff9800;
 }
 
 .stop-employee-btn {
@@ -847,9 +966,10 @@ nav#side-menu.active + .main-content {
 
 /* Fix overlapping buttons */
 .action-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .action-buttons button {
@@ -897,9 +1017,245 @@ nav#side-menu.active + .main-content {
   .side-menu.active {
     left: 0;
   }
+  .break-settings-section {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .break-item {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+  }
+  
+  .break-inputs {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .time-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .break-name {
+    width: 150px;
+  }
+  
+  .info-text {
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+  }
 
-  /* Add more responsive styles as needed */
+  .operation-display {
+    background-color: #e8f5e9;
+    border: 2px solid #43a047;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #2e7d32;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .operation-display.in-progress {
+    background-color: #fff3e0;
+    border-color: #ff9800;
+    color: #f57c00;
+  }
+  
+  .operation-display.completed {
+    background-color: #e8eaf6;
+    border-color: #3f51b5;
+    color: #303f9f;
+  }
+  
+  .operation-status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-left: 10px;
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Break Settings Enhancement */
+  .break-settings-section {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 25px 0;
+  }
+  
+  .break-item {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .break-inputs {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .time-inputs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .break-name {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1em;
+  }
+  
+  .break-item button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .break-item button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-1px);
+  }
+  
+  
+/* Action buttons in table */
+.table-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
 }
-#manual-time {
-  margin-bottom: 15px;
+
+.table-actions button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Responsive Design for Work Log */
+@media (max-width: 768px) {
+  .break-item {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .break-inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .work-log-actions {
+    flex-direction: column;
+  }
+  
+  .work-log-actions button {
+    width: 100%;
+    padding: 15px 24px;
+  }
+  
+  .table-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .table-actions button {
+    width: 100%;
+  }
+}
+
+/* Hover and Focus States */
+.break-name:focus,
+.work-log-actions button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45, 64, 89, 0.2);
+}
+
+/* Add icons to buttons */
+.work-log-actions button i {
+  font-size: 1.2em;
+}
+
+/* Toast Notification for Actions */
+.notification {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+}
+
+.search-container {
+  margin: 15px 0;
+  padding: 0 20px;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  .search-controls {
+    flex-direction: column;
+  }
+  
+  .search-input-group,
+  .search-options,
+  .date-range {
+    flex-direction: column;
+  }
+  
+  .quick-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .search-tag {
+    margin: 2px;
+  }
+}
+
+.search-container {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .search-container {
+    flex-direction: column;
+  }
 }
